@@ -1,11 +1,11 @@
 /** @jsx h */
-import { h } from "preact";
+import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
 
-export const Fotter = () => {
+export const Fotter: FunctionComponent = () => {
   return (
     <footer
-      class={tw`flex flex-col items-center justify-between px-6 py-4 bg-white dark:bg-black sm:flex-row`}
+      class={tw`flex flex-col items-center justify-between px-6 lg:px-20 py-4 bg-white dark:bg-black sm:flex-row`}
     >
       <a
         href="#"
