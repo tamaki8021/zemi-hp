@@ -2,12 +2,14 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import LemonDrop from "../islands/LemonDrop.tsx";
-import { Fotter } from "../components/Fotter.tsx";
+import { Fotter } from "../components/layout/Fotter.tsx";
+import Header from "../islands/Header.tsx";
 
 export default function Home() {
   return (
     <html class="dark">
       <div class={tw`w-full h-screen dark:bg-black`}>
+        <Header />
         <div class={tw`p-1 mx-auto max-w-screen-md `}>
           <section>
             <LemonDrop />
