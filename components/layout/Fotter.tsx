@@ -5,7 +5,7 @@ import { tw } from "@twind";
 export const Fotter: FunctionComponent = () => {
   return (
     <footer
-      class={tw`flex flex-col items-center justify-between px-6 lg:px-20 py-4 bg-white dark:bg-black sm:flex-row fixed md:static bottom-0 w-full`}
+      class={tw`flex flex-col items-center justify-between px-6 lg:px-20 py-4 bg-white dark:bg-black sm:flex-row w-full`}
     >
       <a
         href="#"
