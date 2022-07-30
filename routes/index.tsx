@@ -1,23 +1,15 @@
 /** @jsx h */
 import { h } from "preact";
-import { tw } from "@twind";
-import LemonDrop from "../islands/LemonDrop.tsx";
 import { Fotter } from "../components/layout/Fotter.tsx";
 import Header from "../islands/Header.tsx";
+import { Home } from "../components/pages/Home.tsx";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <html class="dark">
-      <div class={tw`w-full h-screen dark:bg-black`}>
-        <Header />
-        <div class={tw`p-1 mx-auto max-w-screen-md `}>
-          <section>
-            <LemonDrop />
-          </section>
-          <p class={tw`my-6 dark:text-white`}>Welcome to mypage</p>
-        </div>
-        <Fotter />
-      </div>
+      <Header />
+      <Home />
+      <Fotter />
     </html>
   );
 }
