@@ -17,7 +17,7 @@ export default function Header() {
       </div>
       <div class={tw`block lg:hidden`}>
         <button
-          class={tw`flex items-center px-3 py-2 rounded hover:text-white focus:outline-none ${
+          class={tw`flex items-center px-3 py-2 rounded text-white focus:outline-none ${
             !isOpen && "border"
           }`}
           onClick={() => setIsOpen(!isOpen)}
