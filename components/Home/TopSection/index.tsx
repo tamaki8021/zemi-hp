@@ -2,12 +2,14 @@
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
 import { TypingAnimation } from "./TypingAnimation.tsx";
+import Particle from "../../../islands/Particles.tsx";
 
 export const TopSection: FunctionComponent = () => {
   return (
     <div
       class={tw`text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20`}
     >
+      <Particle />
       <h2
         class={tw`text-3xl font-extrabold text-black dark:text-white sm:text-4xl`}
       >

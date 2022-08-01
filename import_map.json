@@ -7,6 +7,7 @@
     "@twind": "./twind.config.ts",
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
-    "easings": "https://deno.land/x/easings@1.0.4"
+    "easings": "https://deno.land/x/easings@1.0.4",
+    "particles": "https://esm.sh/preact-particles@2.1.4"
   }
 }
