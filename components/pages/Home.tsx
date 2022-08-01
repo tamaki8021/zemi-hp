@@ -12,7 +12,7 @@ import {
 export const Home: FunctionComponent = () => {
   return (
     <div class={tw`w-full dark:bg-black`}>
-      <div class={tw`p-1 mx-auto max-w-screen-lg`}>
+      <div class={tw`pt-24 pb-14 mx-auto max-w-screen-xl`}>
         <TopSection />
         <ConceptSection />
         <ProfessorSection />

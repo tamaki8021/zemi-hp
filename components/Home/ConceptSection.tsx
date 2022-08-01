@@ -1,13 +1,15 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
+import { SectionTitle } from "../SectionTitle.tsx";
 
 export const ConceptSection: FunctionComponent = () => {
   return (
-    <section class={tw`bg-white dark:bg-gray-800 w-full mx-auto p-8`}>
-      <img src="/icons/rocket.svg" class={tw`h-10 w-10 mb-8 m-auto`} />
+    <section class={tw`w-full mx-auto px-8 py-16 md:py-24`}>
+      <SectionTitle title={"WHAT WE CAN DO"} />
+
       <p
-        class={tw`text-gray-600 dark:text-white w-full md:w-2/3 m-auto text-center text-lg md:text-3xl`}
+        class={tw`text-white w-full md:w-2/3 m-auto text-center text-2xl md:text-3xl mt-8 md:mt-12`}
       >
         <span class={tw`font-bold text-indigo-500`}>“</span>
         To get social media testimonials like these, keep your customers engaged
