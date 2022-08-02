@@ -39,11 +39,14 @@ const afterStyles = css({
 export const TypingAnimation: FunctionComponent = () => {
   return (
     <h1 class={tw`my-16 sm:my-20 text-xl text-gray-100`}>
-      帝京大学でモヤモヤしている人
+      帝京大学でモヤモヤしている人へ
       <br class={tw`block md:hidden`} />
       <span class={tw`relative`}>
-        <span class={tw`h-20 pt-2 overflow-x-hidden whitespace-nowrap animate-pulse`}>
-          ステキな「<span class={tw`font-bold text-red-400`}>変態</span>」を目指しませんか？
+        <span
+          class={tw`h-20 pt-2 overflow-x-hidden whitespace-nowrap animate-pulse`}
+        >
+          ステキな「<span class={tw`font-bold text-red-400`}>変態</span>
+          」を目指しませんか？
         </span>
         <span
           class={tw`absolute -bottom-0 left-0 -top-1 inline-block bg-black w-full ${typeAnimation} ${afterStyles}`}
