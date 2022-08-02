@@ -8,16 +8,18 @@ export default function Header() {
 
   return (
     <nav
-      class={tw`w-full flex items-center justify-between flex-wrap bg-black p-6 lg:px-20 fixed left-0 md:static`}
+      class={tw`w-full flex items-center justify-between flex-wrap bg-black p-6 lg:px-20 fixed left-0 top-0 md:static`}
     >
       <div class={tw`flex items-center text-white mr-6`}>
-        <span class={tw`font-semibold text-xl tracking-tight`}>
-          AKAGI SEMINAR
-        </span>
+        <a href="">
+          <span class={tw`font-semibold text-xl tracking-tight`}>
+            AKAGI SEMINAR
+          </span>
+        </a>
       </div>
       <div class={tw`block lg:hidden`}>
         <button
-          class={tw`flex items-center px-3 py-2 rounded hover:text-white focus:outline-none ${
+          class={tw`flex items-center px-3 py-2 rounded text-white focus:outline-none ${
             !isOpen && "border"
           }`}
           onClick={() => setIsOpen(!isOpen)}
