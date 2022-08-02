@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
+import Particle from "../islands/Particles.tsx";
 
 type Props = {
   title: string;
@@ -9,7 +10,8 @@ type Props = {
 
 export const TopSection: FunctionComponent<Props> = ({ title, subTitle }) => {
   return (
-    <section class={tw`w-full mx-auto py-20 sm:py-12 px-4 sm:px-6 lg:px-8`}>
+    <section class={tw`w-full mx-auto py-16 sm:py-12 px-8 lg:px-14`}>
+      <Particle />
       <h2
         class={tw`text-2xl font-extrabold text-black text-gray-100 sm:text-5xl mt-6`}
       >
