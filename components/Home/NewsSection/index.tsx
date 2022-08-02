@@ -14,7 +14,7 @@ export const NewsSection: FunctionComponent = () => {
           <ul class={tw`divide-y divide-gray-300`}>
             <Item title={"Webサイト開設"} date={"2022.08"} />
             <Item
-              title={"川井キャンプ場で親睦バーベキュー会を行いました。"}
+              title={"川井キャンプ場でバーベキュー親睦会を行いました。"}
               date={"2022.07"}
             />
           </ul>
