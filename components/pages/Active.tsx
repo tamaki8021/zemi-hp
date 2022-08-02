@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
-import { TopSection } from "../TopSection.tsx";
+import { TopSection } from "../common/index.ts";
 
 export const Active: FunctionComponent = () => {
   return (
@@ -12,7 +12,9 @@ export const Active: FunctionComponent = () => {
       >
         <div class={tw`pt-24 p-8`}>
           <section class={tw`max-w-3xl text-white `}>
-            <p class={tw`text-4xl md:text-9xl font-extrabold`}>COMMING SOON . . .</p>
+            <p class={tw`text-4xl md:text-9xl font-extrabold`}>
+              COMMING SOON . . .
+            </p>
           </section>
         </div>
       </div>

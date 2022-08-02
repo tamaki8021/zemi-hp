@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
-import { SectionTitle } from "../SectionTitle.tsx";
+import { SectionTitle } from "../common/index.ts";
 
 export const ProfessorSection: FunctionComponent = () => {
   return (

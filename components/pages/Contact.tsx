@@ -1,8 +1,8 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
-import { TopSection } from "../TopSection.tsx";
 import { Form } from "../Contact/index.ts";
+import { TopSection } from "../common/index.ts";
 
 export const Contact: FunctionComponent = () => {
   return (
