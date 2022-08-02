@@ -10,12 +10,16 @@ export const ConceptSection: FunctionComponent = () => {
         <SectionTitle title={"WHAT WE CAN DO"} />
 
         <p
-          class={tw`text-white w-full md:w-2/3 m-auto text-center text-2xl md:text-3xl mt-8 md:mt-12`}
+          class={tw`text-white font-extrabold w-full text-center sm:text-lg md:text-2xl mt-8 md:mt-12 animate-pulse`}
         >
           <span class={tw`font-bold text-indigo-500`}>“</span>
-          To get social media testimonials like these, keep your customers
-          engaged with your social media accounts by posting regularly yourself
+          変態、クリエイティブ、ニュータイプ
           <span class={tw`font-bold text-indigo-500`}>”</span>
+        </p>
+        <p
+          class={tw`text-white md:w-3/4 m-auto text-center md:text-xl mt-8 md:mt-12`}
+        >
+          帝京大学経済学部　赤木ゼミでは、「変態、クリエイティブ、ニュータイプ」をキーワードとして、周りに流されずに、個性を表現できるような人など将来を生き抜くことができる多様な人材になることを目指して活動していきます。
         </p>
       </div>
     </section>
