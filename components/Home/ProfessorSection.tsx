@@ -14,7 +14,7 @@ export const ProfessorSection: FunctionComponent = () => {
               <div class={tw`max-w-xl`}>
                 <img
                   class={tw`object-cover object-center w-full sm:h-72 max-h-72 rounded-md shadow`}
-                  src={"/no_image.jpg"}
+                  src={"/akagi.png"}
                   alt="professorの画像"
                 />
               </div>
@@ -37,7 +37,7 @@ export const ProfessorSection: FunctionComponent = () => {
               <p>マーケティング・データサイエンス</p>
             </div>
             <a
-              href="about"
+              href="https://www.e-campus.gr.jp/staffinfo/public/staff/detail/3552/18"
               type="button"
               class={tw`md:w-1/2 mt-6 py-2 px-4 flex justify-center items-center  bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full animate-pulse`}
             >
