@@ -12,17 +12,10 @@ export const NewsSection: FunctionComponent = () => {
 
         <div class={tw`shadow overflow-hidden sm:rounded-md mt-8 md:mt-12`}>
           <ul class={tw`divide-y divide-gray-200`}>
+            <Item title={"Webサイト開設"} date={"2022.08"} />
             <Item
-              title={"Increase newsletter subscribers by 500"}
-              date={"January 7, 2020"}
-            />
-            <Item
-              title={"Increase newsletter subscribers by 500"}
-              date={"Jun 14, 2020"}
-            />
-            <Item
-              title={"Increase customer satisfaction rating by 10 points"}
-              date={"December 10, 2020"}
+              title={"川井キャンプ場で親睦バーベキュー会を行いました。"}
+              date={"2022.07"}
             />
           </ul>
         </div>
