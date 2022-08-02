@@ -36,14 +36,27 @@ export const ProfessorSection: FunctionComponent = () => {
               <p class={tw`text-lg font-bold pb-2`}>- 専門分野 -</p>
               <p>マーケティング・データサイエンス</p>
             </div>
-            <div class={tw`inline-flex w-full sm:w-auto sm:mx-2 mt-3`}>
-              <a
-                href=""
-                class={tw`inline-flex items-center justify-center px-5 py-2 text-white bg-indigo-500 rounded-lg hover:bg-indigo-400 focus:ring focus:ring-blue-300 focus:ring-opacity-80 animate-pulse`}
+            <a
+              href="about"
+              type="button"
+              class={tw`md:w-1/2 mt-6 py-2 px-4 flex justify-center items-center  bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full animate-pulse`}
+            >
+              more
+              <svg
+                class={tw`w-6 h-6 ml-2`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                more →
-              </a>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export const Item: FunctionComponent<Props> = ({
       class={tw`flex flex-col items-center px-6 md:px-8 py-12 space-y-3 text-center rounded-xl border border-gray-300`}
     >
       <span
-        class={tw`inline-block p-3 text-blue-500 rounded-full dark:text-white bg-indigo-500`}
+        class={tw`inline-block p-3 text-blue-500 rounded-full dark:text-white bg-indigo-500 animate-bounce`}
       >
         <svg
           class={tw`h-10 w-10`}
