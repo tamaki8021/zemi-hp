@@ -11,13 +11,16 @@ export const NewsSection: FunctionComponent = () => {
         <SectionTitle title={"NEWS"} />
 
         <div class={tw`shadow overflow-hidden sm:rounded-md mt-8 md:mt-12`}>
-          <ul class={tw`divide-y divide-gray-200`}>
+          <ul class={tw`divide-y divide-gray-300`}>
             <Item title={"Webサイト開設"} date={"2022.08"} />
             <Item
               title={"川井キャンプ場で親睦バーベキュー会を行いました。"}
               date={"2022.07"}
             />
           </ul>
+        </div>
+        <div class={tw`text-indigo-400 inline-block text-center w-full text-xl`}>
+          <a href="news">more →</a>
         </div>
       </div>
     </section>
