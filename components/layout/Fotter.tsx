@@ -8,7 +8,7 @@ export const Fotter: FunctionComponent = () => {
       class={tw`flex flex-col items-center justify-between px-6 lg:px-20 py-4 bg-white dark:bg-black sm:flex-row w-full relative pt-8 md:pt-10`}
     >
       <a
-        href="#"
+        href="/"
         class={`text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300`}
       >
         AKAGI SEMINAR

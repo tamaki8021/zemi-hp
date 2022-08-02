@@ -11,7 +11,7 @@ export default function Header() {
       class={tw`w-full flex items-center justify-between flex-wrap bg-black p-6 lg:px-20 fixed left-0 top-0 md:static`}
     >
       <div class={tw`flex items-center text-white mr-6`}>
-        <a href="">
+        <a href="/">
           <span class={tw`font-semibold text-xl tracking-tight`}>
             AKAGI SEMINAR
           </span>
@@ -39,25 +39,25 @@ export default function Header() {
         }`}
       >
         <a
-          href="#responsive-header"
+          href="about"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
           About
         </a>
         <a
-          href="#responsive-header"
+          href="active"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
           Active
         </a>
         <a
-          href="#responsive-header"
+          href="news"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
           News
         </a>
         <a
-          href="#responsive-header"
+          href="contact"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white dark:text-white`}
         >
           Contact
