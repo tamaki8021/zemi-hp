@@ -1,22 +1,47 @@
 /** @jsx h */
-import { h, FunctionComponent } from "preact";
+import { h, FunctionComponent, JSX } from "preact";
+import { useState } from "preact/hooks";
 import { tw } from "@twind";
 
-export const Form: FunctionComponent = () => {
+const FormKeys = {
+  formUrl:
+    "https://docs.google.com/forms/u/3/d/e/1FAIpQLSfOMUu6n3hnfs5xcKM4_rx-TlzxMjrib5rExPYCEkYk7ECwgg/formResponse",
+  name: "entry.527181026",
+  email: "entry.1133397221",
+  content: "entry.466288851",
+};
+
+export default function Form() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleClick = async () => {
+    await fetch(FormKeys.formUrl, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Location: "/",
+      },
+      body: `${FormKeys.name}=${name}&${FormKeys.email}=${email}&${FormKeys.content}=${content}`,
+    });
+    // FEATURE: 成功時の確認アラートとかの出し方がわからなかったので、現時点は送信したら画面のレンダリングが行われる
+  };
+
   return (
-    <form
-      class={tw`w-full max-w-xl mx-auto px-6`}
-      action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfOMUu6n3hnfs5xcKM4_rx-TlzxMjrib5rExPYCEkYk7ECwgg/formResponse"
-    >
+    <form class={tw`w-full max-w-xl mx-auto px-6`} onSubmit={handleClick}>
       <div>
         <div class={tw`grid max-w-xl grid-cols-2 gap-4 m-auto`}>
           <div class={tw`col-span-2 lg:col-span-1`}>
             <div class={tw`relative text-gray-200`}>
               <label for="name">お名前</label>
               <input
+                value={name}
                 type="text"
+                onInput={(e) => setName(e.currentTarget.value)}
                 id="name"
-                name="entry.527181026"
+                name="name"
                 class={tw`rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent`}
                 placeholder="Name"
               />
@@ -28,23 +53,25 @@ export const Form: FunctionComponent = () => {
               <input
                 type="email"
                 id="email"
-                name="entry.1133397221"
+                name="email"
+                onInput={(e) => setEmail(e.currentTarget.value)}
                 class={tw`rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent`}
                 placeholder="email"
               />
             </div>
           </div>
           <div class={tw`col-span-2`}>
-            <label class={tw`text-gray-200`} for="comment">
+            <label class={tw`text-gray-200`} for="content">
               お問合せ内容
             </label>
             <textarea
               class={tw`flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent`}
-              id="comment"
+              id="content"
               placeholder="Enter your comment"
-              name="entry.466288851"
+              name="content"
               rows={5}
               cols={40}
+              onInput={(e) => setContent(e.currentTarget.value)}
             ></textarea>
           </div>
           <div class={tw`col-span-2 text-right mt-4`}>
@@ -59,4 +86,4 @@ export const Form: FunctionComponent = () => {
       </div>
     </form>
   );
-};
+}
