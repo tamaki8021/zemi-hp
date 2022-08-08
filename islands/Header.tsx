@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <nav
-      class={tw`w-full flex items-center justify-between flex-wrap bg-black p-6 lg:px-20 fixed left-0 top-0 md:static`}
+      class={tw`w-full flex items-center justify-between flex-wrap bg-black p-6 lg:px-20 fixed top-0 left-0 z-10 bg-black`}
     >
       <div class={tw`flex items-center text-white mr-6`}>
         <a href="/">
