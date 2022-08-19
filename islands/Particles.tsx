@@ -1,18 +1,28 @@
 /** @jsx h */
 import { h } from "preact";
-import { tw } from "@twind";
 import Particles from "particles";
-import { loadFull } from "https://esm.sh/v89/tsparticles@2.1.4";
-import { Engine } from "https://esm.sh/v89/tsparticles-engine@2.1.4/types/engine.d.ts";
+import { loadFull } from "tsparticles";
+import type { Engine, Container } from "tsparticles-engine/types/index.d.ts";
 
 export default function Particle() {
+  const particlesInit = async (engine: Engine) => {
+    console.log(engine);
+
+    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  };
+
+  const particlesLoaded = async (container: Container | undefined) => {
+    await console.log(container);
+  };
+
   return (
     <Particles
       id="tsparticles"
-      init={async (engine: Engine) => {
-        console.log(engine);
-        await loadFull(engine);
-      }}
+      init={particlesInit}
+      loaded={particlesLoaded}
       options={{
         // fullScreen: false,
         fpsLimit: 120,
