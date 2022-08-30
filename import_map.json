@@ -10,6 +10,9 @@
     "easings": "https://deno.land/x/easings@1.0.4",
     "particles": "https://esm.sh/preact-particles@2.2.2",
     "tsparticles": "https://esm.sh/tsparticles@2.2.2",
-    "tsparticles-engine/": "https://esm.sh/tsparticles-engine@2.2.2/"
+    "tsparticles-engine": "https://esm.sh/v91/tsparticles-engine@2.2.2/types/engine.d.ts",
+    "tsparticles-container": "https://esm.sh/v91/tsparticles-engine@2.2.2/types/Core/Container.d.ts",
+    "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
+    "notion_sdk/": "https://deno.land/x/notion_sdk@v1.0.4/"
   }
 }
