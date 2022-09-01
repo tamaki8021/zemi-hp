@@ -2,8 +2,15 @@
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
 import { TopSection } from "../common/index.ts";
+import type { Article } from "../../routes/active.tsx";
 
-export const Active: FunctionComponent = () => {
+type Props = {
+  article: Article[] | undefined;
+};
+
+export const Active: FunctionComponent<Props> = ({ article }) => {
+  console.log(article);
+
   return (
     <div class={tw`w-full mx-auto bg-black pt-10`}>
       <TopSection title={"Active"} subTitle={"活動実績"} />
@@ -12,9 +19,11 @@ export const Active: FunctionComponent = () => {
       >
         <div class={tw`pt-24 p-8`}>
           <section class={tw`max-w-3xl text-white `}>
-            <p class={tw`text-4xl md:text-9xl font-extrabold`}>
-              COMMING SOON . . .
-            </p>
+            {!article ? (
+              <p class={tw`text-4xl md:text-9xl font-extrabold`}>コンテンツがありません。</p>
+            ) : (
+              <p class={tw`text-4xl md:text-9xl font-extrabold`}>コンテンツがあります。</p>
+            )}
           </section>
         </div>
       </div>
