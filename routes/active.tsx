@@ -11,7 +11,7 @@ import { queryDatabase } from "../lib/notion.ts";
 export type Article = {
   id: string;
   title: string;
-  imageUrl: string;
+  imageUrl: string | undefined;
   createdAt: string;
 };
 
@@ -23,9 +23,11 @@ export const handler: Handlers<Article[] | undefined> = {
       const properties = d.properties;
 
       const id = d.id;
-      const title = properties.title.title[0].plain_text;
-      const createdAt = properties.createdAt.created_time;
-      const imageUrl = properties.image.files[0].file.url;
+      const title = properties.title.title[0].plain_text as string;
+      const createdAt = properties.createdAt.created_time as string;
+      const imageUrl = properties.image.files[0]
+        ? properties.image.files[0].file.url as string
+        : undefined;
 
       return {
         id,
@@ -42,7 +44,7 @@ export default function ActivePage({ data }: PageProps<Article[] | undefined>) {
   return (
     <html class="dark">
       <Header />
-      <Active article={data} />
+      <Active articles={data} />
       <Fotter />
     </html>
   );
