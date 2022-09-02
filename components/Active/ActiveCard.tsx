@@ -8,9 +8,13 @@ type Props = {
   imageUrl: string | undefined;
 };
 
-export const ActiveCard: FunctionComponent<Props> = ({ title, createdAt, imageUrl }) => {
+export const ActiveCard: FunctionComponent<Props> = ({
+  title,
+  createdAt,
+  imageUrl,
+}) => {
   return (
-    <div class={tw`p-4 md:w-1/3`}>
+    <div class={tw`sm:p-4 px-0 py-4`}>
       <div
         class={tw`h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden`}
       >
