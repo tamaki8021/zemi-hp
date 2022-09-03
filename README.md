@@ -1,6 +1,15 @@
-# fresh project
+# 赤木ゼミ website
 
-### Usage
+## 使用技術
+
+- [deno](https://deno.land/)
+- [fresh](https://fresh.deno.dev/)
+### CMS
+- [NotionAPI](https://developers.notion.com/)
+### デプロイ先
+- [Deno Deploy](https://deno.com/deploy)
+
+## Usage
 
 Start the project:
 
