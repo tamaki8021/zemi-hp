@@ -37,6 +37,7 @@ export const Active: FunctionComponent<Props> = ({ articles }) => {
               {articles.map((article) => (
                 <ActiveCard
                   key={article.id}
+                  id={article.id}
                   title={article.title}
                   createdAt={formatDate(article.createdAt)}
                   imageUrl={article.imageUrl}

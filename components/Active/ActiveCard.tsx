@@ -3,12 +3,14 @@ import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
 
 type Props = {
+  id: string;
   title: string;
   createdAt: string;
   imageUrl: string | undefined;
 };
 
 export const ActiveCard: FunctionComponent<Props> = ({
+  id,
   title,
   createdAt,
   imageUrl,
@@ -24,7 +26,7 @@ export const ActiveCard: FunctionComponent<Props> = ({
           alt="blog"
         />
         <div class={tw`p-6`}>
-          <h1 class={tw`text-lg font-medium mb-3`}>{title}</h1>
+          <h1 class={tw`text-lg font-medium mb-3`}><a href={`active/${id}`}>{title}</a></h1>
           <p class={tw`tracking-widest text-xs font-medium text-gray-400 mb-1`}>
             {createdAt}
           </p>
