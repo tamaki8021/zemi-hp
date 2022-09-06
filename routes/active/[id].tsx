@@ -5,47 +5,58 @@ import Header from "../../islands/Header.tsx";
 
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
-import { queryDatabase, getPageContent } from "../../lib/notion.ts";
+import { getPage, getBlocks } from "../../lib/notion.ts";
+import { Active } from "../../components/pages/Active.tsx";
+import type {
+  BlockObjectResponse,
+  GetPageResponse,
+} from "notion_sdk/src/api-endpoints.ts";
 
-export type Article = {
-  id: string;
-  title: string;
-  imageUrl: string | undefined;
-  createdAt: string;
+export type Props = {
+  page: GetPageResponse;
+  blocks: Array<BlockObjectResponse>;
 };
 
-export const handler: Handlers<any | undefined> = {
+export const handler: Handlers<Props | undefined> = {
   async GET(_, ctx) {
-    const name = ctx.params.id;
-    const res = await getPageContent(name);
-    // const data = res?.results.map((d) => {
-    //   // @ts-ignore: <QueryDatabaseResponseに合わせることができなかったので自作>
-    //   const properties = d.properties;
+    const id = ctx.params.id;
+    const page = await getPage(id);
+    const blocks = await getBlocks(id);
+    // Retrieve block children for nested blocks (one level deep), for example toggle blocks
+    // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
+    const childBlocks = await Promise.all(
+      blocks
+        .filter((block) => block.has_children)
+        .map(async (block) => {
+          return {
+            id: block.id,
+            children: await getBlocks(block.id),
+          };
+        })
+    );
+    const blocksWithChildren = blocks.map((block) => {
+      // Add child blocks if the block should contain children but none exists
+      if (block.has_children && !block[block.type].children) {
+        block[block.type]["children"] = childBlocks.find(
+          (x) => x.id === block.id
+        )?.children;
+      }
 
-    //   const id = d.id;
-    //   const title = properties.title.title[0].plain_text as string;
-    //   const createdAt = properties.createdAt.created_time as string;
-    //   const imageUrl = properties.image.files[0]
-    //     ? properties.image.files[0].file.url as string
-    //     : undefined;
+      return block;
+    });
 
-    //   return {
-    //     id,
-    //     title,
-    //     imageUrl,
-    //     createdAt,
-    //   };
-    // });
-    return ctx.render(res);
+    return ctx.render({
+      page,
+      blocks: blocksWithChildren,
+    });
   },
 };
 
-export default function ActivePage({ data }: PageProps<any | undefined>) {
-
+export default function ActivePage({ data }: PageProps<Props>) {
   return (
     <html class="dark">
       <Header />
-      {/* <Active articles={data} /> */}
+      <Active page={data.page} blocks={data.blocks} />
       <Fotter />
     </html>
   );
