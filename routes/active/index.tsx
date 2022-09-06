@@ -40,7 +40,7 @@ export const handler: Handlers<Article[] | undefined> = {
   },
 };
 
-export default function ActivePage({ data }: PageProps<Article[] | undefined>) {
+export default function ActivesPage({ data }: PageProps<Article[] | undefined>) {
   return (
     <html class="dark">
       <Header />
