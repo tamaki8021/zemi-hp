@@ -4,21 +4,13 @@ import { tw } from "@twind";
 import { TopSection } from "../common/index.ts";
 import { ActiveCard } from "../Active/ActiveCard.tsx";
 import type { Article } from "../../routes/active/index.tsx";
+import { formatDate } from "../../utils/date.ts";
 
 type Props = {
   articles: Article[] | undefined;
 };
 
 export const Actives: FunctionComponent<Props> = ({ articles }) => {
-  const formatDate = (createdAt: string) => {
-    const d = new Date(createdAt);
-    const year = d.getFullYear().toString();
-    const month = d.getMonth().toString();
-    const date = d.getDate().toString();
-
-    return `${year}-${month}-${date}`;
-  };
-
   return (
     <div class={tw`w-full mx-auto bg-black pt-10`}>
       <TopSection title={"Active"} subTitle={"活動実績"} />
@@ -32,7 +24,11 @@ export const Actives: FunctionComponent<Props> = ({ articles }) => {
             </p>
           </div>
         ) : (
-          <div class={tw`pt-24 p-8 text-white ${articles.length > 3 ? "h-full" : "h-screen"}`}>
+          <div
+            class={tw`pt-24 p-8 text-white ${
+              articles.length > 3 ? "h-full" : "h-screen"
+            }`}
+          >
             <div class="flex flex-wrap">
               {articles.map((article) => (
                 <ActiveCard
