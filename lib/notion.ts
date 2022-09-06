@@ -1,22 +1,9 @@
 import "dotenv/load.ts";
-import { BlockObjectResponse } from "notion_sdk/src/api-endpoints.ts";
+import {
+  BlockObjectResponse,
+  PartialBlockObjectResponse,
+} from "notion_sdk/src/api-endpoints.ts";
 import { Client, APIErrorCode } from "notion_sdk/src/mod.ts";
-
-interface PostBlock {
-  id: string;
-  type:
-    | "heading_2"
-    | "paragraph"
-    | "heading_1"
-    | "heading_3"
-    | "bulleted_list_item"
-    | "numbered_list_item"
-    | "to_do"
-    | "toggle"
-    | "child_page"
-    | "unsupported";
-  text: string | null;
-}
 
 export const notion = new Client({ auth: Deno.env.get("NOTION_KEY") });
 
@@ -43,7 +30,6 @@ export const queryDatabase = async () => {
         },
       ],
     });
-    console.log(res);
 
     return res;
   } catch (error) {
@@ -59,44 +45,32 @@ export const queryDatabase = async () => {
   }
 };
 
-export const getPageContent = async (pageId: string) => {
-  console.log(pageId);
-
-  const res = await notion.blocks.children.list({ block_id: pageId });
-
-  const postBlocks = res.results.map((b): PostBlock => {
-    const block = b as BlockObjectResponse;
-    console.log(block);
-
-    switch (block.type) {
-      case "heading_2":
-        return {
-          id: block.id,
-          type: block.type,
-          text: block.heading_2.rich_text[0]?.plain_text || null,
-        };
-      case "paragraph":
-        return {
-          id: block.id,
-          type: block.type,
-          text: block.paragraph.rich_text[0]?.plain_text || null,
-        };
-      case "bulleted_list_item":
-        return {
-          id: block.id,
-          type: block.type,
-          text: block.bulleted_list_item.rich_text[0]?.plain_text || null,
-        };
-      default:
-        return {
-          id: block.id,
-          type: "unsupported",
-          text: "",
-        };
-    }
-  });
-
-  console.log(postBlocks);
+export const getPage = async (pageId: string) => {
+  const response = await notion.pages.retrieve({ page_id: pageId });
+  return response;
 };
 
-export const getPageProperty = () => {};
+export const getBlocks = async (blockId: string) => {
+  const blocks = [] as Array<BlockObjectResponse>;
+  let cursor;
+  while (true) {
+    const {
+      results,
+      next_cursor,
+    }: {
+      results: Array<PartialBlockObjectResponse | BlockObjectResponse>;
+      next_cursor: string | null;
+    } = await notion.blocks.children.list({
+      start_cursor: cursor,
+      block_id: blockId,
+    });
+
+    blocks.push(...(results as Array<BlockObjectResponse>));
+    if (!next_cursor) {
+      break;
+    }
+    cursor = next_cursor;
+  }
+
+  return blocks;
+};
