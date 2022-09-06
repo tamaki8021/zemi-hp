@@ -2,14 +2,14 @@
 import { h, FunctionComponent } from "preact";
 import { tw } from "@twind";
 import { TopSection } from "../common/index.ts";
-import type { Article } from "../../routes/active.tsx";
 import { ActiveCard } from "../Active/ActiveCard.tsx";
+import type { Article } from "../../routes/active/index.tsx";
 
 type Props = {
   articles: Article[] | undefined;
 };
 
-export const Active: FunctionComponent<Props> = ({ articles }) => {
+export const Actives: FunctionComponent<Props> = ({ articles }) => {
   const formatDate = (createdAt: string) => {
     const d = new Date(createdAt);
     const year = d.getFullYear().toString();
