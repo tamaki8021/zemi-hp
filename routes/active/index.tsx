@@ -1,12 +1,12 @@
 /** @jsx h */
 import { h } from "preact";
-import { Fotter } from "../components/layout/Fotter.tsx";
-import { Active } from "../components/pages/Active.tsx";
-import Header from "../islands/Header.tsx";
+import { Fotter } from "../../components/layout/Fotter.tsx";
+import { Actives } from "../../components/pages/Actives.tsx";
+import Header from "../../islands/Header.tsx";
 
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
-import { queryDatabase } from "../lib/notion.ts";
+import { queryDatabase } from "../../lib/notion.ts";
 
 export type Article = {
   id: string;
@@ -40,11 +40,11 @@ export const handler: Handlers<Article[] | undefined> = {
   },
 };
 
-export default function ActivePage({ data }: PageProps<Article[] | undefined>) {
+export default function ActivesPage({ data }: PageProps<Article[] | undefined>) {
   return (
     <html class="dark">
       <Header />
-      <Active articles={data} />
+      <Actives articles={data} />
       <Fotter />
     </html>
   );
