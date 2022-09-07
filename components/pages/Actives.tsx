@@ -17,18 +17,12 @@ export const Actives: FunctionComponent<Props> = ({ articles }) => {
       <div
         class={tw`w-full bg-black flex flex-col justify-center items-center bg-black relative`}
       >
-        {!articles ? (
-          <div class={tw`pt-24 p-8 text-white h-screen`}>
+        <div class={tw`pt-24 p-8 text-white min-h-screen h-full`}>
+          {!articles ? (
             <p class={tw`text-4xl md:text-9xl font-extrabold`}>
               コンテンツがありません。
             </p>
-          </div>
-        ) : (
-          <div
-            class={tw`pt-24 p-8 text-white ${
-              articles.length > 3 ? "h-full" : "h-screen"
-            }`}
-          >
+          ) : (
             <div class="flex flex-wrap">
               {articles.map((article) => (
                 <ActiveCard
@@ -40,8 +34,8 @@ export const Actives: FunctionComponent<Props> = ({ articles }) => {
                 />
               ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
