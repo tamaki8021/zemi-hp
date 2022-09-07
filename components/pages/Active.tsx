@@ -17,7 +17,7 @@ export const Active: FunctionComponent<Props> = ({ blocks, page }) => {
     <div class={tw`w-full mx-auto bg-black pt-10`}>
       <TopSection title={title} subTitle={formatDate(createdAt)} />
       <div
-        class={tw`w-full items-center mx-auto py-16 sm:py-12 px-8 lg:px-20 relative bg-black text-white`}
+        class={tw`w-full min-h-screen items-center mx-auto py-16 sm:py-12 px-8 lg:px-20 relative bg-black text-white`}
       >
         {blocks.map((block) => (
           <Fragment key={block.id}>{<Block block={block} />}</Fragment>

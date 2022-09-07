@@ -39,25 +39,25 @@ export default function Header() {
         }`}
       >
         <a
-          href="about"
+          href="/about"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
           About
         </a>
         <a
-          href="active"
+          href="/active"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
           Active
         </a>
         <a
-          href="news"
+          href="/news"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
           News
         </a>
         <a
-          href="contact"
+          href="/contact"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white dark:text-white`}
         >
           Contact

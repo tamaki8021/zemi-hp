@@ -31,13 +31,13 @@ export const Block: FunctionComponent<Props> = ({ block }) => {
         );
       case "heading_2":
         return (
-          <h2>
+          <h2 class={tw`text-xl`}>
             <Text text={value.rich_text} />
           </h2>
         );
       case "heading_3":
         return (
-          <h3>
+          <h3 class={tw`text-lg`}>
             <Text text={value.rich_text} />
           </h3>
         );
@@ -129,5 +129,5 @@ export const Block: FunctionComponent<Props> = ({ block }) => {
     }
   };
 
-  return <>{renderItem()}</>;
+  return <div class={tw`p-1`}>{renderItem()}</div>;
 };
