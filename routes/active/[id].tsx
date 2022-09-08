@@ -11,6 +11,7 @@ import type {
   BlockObjectResponse,
   GetPageResponse,
 } from "notion_sdk/src/api-endpoints.ts";
+import { DefaultHead } from "../../components/layout/DefaultHead.tsx";
 
 export type Props = {
   page: GetPageResponse;
@@ -55,6 +56,7 @@ export const handler: Handlers<Props | undefined> = {
 export default function ActivePage({ data }: PageProps<Props>) {
   return (
     <html class="dark">
+      <DefaultHead />
       <Header />
       <Active page={data.page} blocks={data.blocks} />
       <Fotter />
