@@ -7,6 +7,7 @@ import Header from "../../islands/Header.tsx";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { queryDatabase } from "../../lib/notion.ts";
+import { DefaultHead } from "../../components/layout/DefaultHead.tsx";
 
 export type Article = {
   id: string;
@@ -43,6 +44,7 @@ export const handler: Handlers<Article[] | undefined> = {
 export default function ActivesPage({ data }: PageProps<Article[] | undefined>) {
   return (
     <html class="dark">
+      <DefaultHead />
       <Header />
       <Actives articles={data} />
       <Fotter />
