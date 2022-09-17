@@ -17,7 +17,7 @@ export const About: FunctionComponent = () => {
           <embed
             width="100%"
             height="680vh"
-            src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/tamaki8021/zemi-hp/blob/main/static/akagi211004.pdf"
+            src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://tamaki8021.github.io/pdf-hosting/akagi211004.pdf"
           />
         </div>
       </div>
