@@ -10,8 +10,8 @@ type Props = {
 
 export const TopSection: FunctionComponent<Props> = ({ title, subTitle }) => {
   return (
-    <section class={tw`w-full mx-auto py-16 sm:py-12 px-8 lg:px-20`}>
-      <Particle />
+    <section class={tw`w-full mx-auto py-16 sm:py-12 px-8 lg:px-20 border-y-1 border-gray-800`}>
+      {/* <Particle /> */}
       <h2
         class={tw`text-2xl font-extrabold text-black text-gray-100 sm:text-5xl mt-6 animate-pulse`}
       >
