@@ -2,15 +2,10 @@
 import { h } from "preact";
 import Particles from "particles";
 import { loadFull } from "tsparticles";
-import { Container } from "tsparticles-container";
-import { Engine } from "tsparticles-engine";
+import type { Engine, Container } from "tsparticles-engine";
 
 export default function Particle() {
   const particlesInit = async (engine: Engine) => {
-    //// you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    //// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    //// starting from v2 you can add only the features you need reducing the bundle size
-    // @ts-ignore: <privateで使用できないとあるが動くため、動かない場合はimport先をindex.tsに変更する>
     await loadFull(engine);
   };
 

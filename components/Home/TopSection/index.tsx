@@ -9,7 +9,7 @@ export const TopSection: FunctionComponent = () => {
     <div
       class={tw`text-center w-full mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8`}
     >
-      <Particle />
+      {/* <Particle /> */}
       <h2
         class={tw`text-3xl font-extrabold text-black text-gray-100 sm:text-5xl hover:animate-ping mt-6`}
       >
