@@ -10,11 +10,11 @@ const typeAnimation = animation("3s ease-out .10s infinite alternate both", {
   "25%, 30%": { transform: "translateX(5ch)" },
   "35%, 40%": { transform: "translateX(8ch)" },
   "45%, 50%": { transform: "translateX(12ch)" },
-  "55%, 60%": { transform: "translateX(16ch)" },
-  "65%, 70%": { transform: "translateX(20ch)" },
-  "75%, 80%": { transform: "translateX(22ch)" },
-  "85%, 90%": { transform: "translateX(25ch)" },
-  "95%, 100%": { transform: "translateX(28ch)" },
+  "55%, 60%": { transform: "translateX(18ch)" },
+  "65%, 70%": { transform: "translateX(24ch)" },
+  "75%, 80%": { transform: "translateX(28ch)" },
+  "85%, 90%": { transform: "translateX(32ch)" },
+  "95%, 100%": { transform: "translateX(36ch)" },
 });
 
 const cursorKeyframes = keyframes({
@@ -46,6 +46,7 @@ export const TypingAnimation: FunctionComponent = () => {
           class={tw`h-20 pt-2 overflow-x-hidden whitespace-nowrap animate-pulse`}
         >
           ステキな「<span class={tw`font-bold text-red-400`}>変態</span>
+          」=「<span class={tw`font-bold text-red-400`}>NERD</span>
           」を目指しませんか？
         </span>
         <span
