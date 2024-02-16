@@ -13,7 +13,7 @@ type Props = {
 export const Actives: FunctionComponent<Props> = ({ articles }) => {
   return (
     <div class={tw`w-full mx-auto bg-black pt-10`}>
-      <TopSection title={"Active"} subTitle={"活動実績"} />
+      <TopSection title={"Activity"} subTitle={"活動実績"} />
       <div
         class={tw`w-full bg-black flex flex-col justify-center items-center bg-black relative`}
       >
