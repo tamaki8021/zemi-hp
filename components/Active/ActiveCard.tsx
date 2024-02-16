@@ -18,7 +18,7 @@ export const ActiveCard: FunctionComponent<Props> = ({
   return (
     <div class={tw`sm:p-4 px-0 py-4`}>
       <div
-        class={tw`h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden`}
+        class={tw`h-full md:w-[350px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden`}
       >
         <img
           class={tw`lg:h-48 md:h-36 w-full object-cover object-center`}

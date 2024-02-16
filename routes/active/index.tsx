@@ -14,6 +14,7 @@ export type Article = {
   title: string;
   imageUrl: string | undefined;
   createdAt: string;
+  implementationDate: string | undefined;
 };
 
 export const handler: Handlers<Article[] | undefined> = {
@@ -26,8 +27,9 @@ export const handler: Handlers<Article[] | undefined> = {
       const id = d.id;
       const title = properties.title.title[0].plain_text as string;
       const createdAt = properties.createdAt.created_time as string;
+      const implementationDate = properties.implementationDate.date?.start as string | undefined;
       const imageUrl = properties.image.files[0]
-        ? properties.image.files[0].file.url as string
+        ? (properties.image.files[0].file.url as string)
         : undefined;
 
       return {
@@ -35,13 +37,16 @@ export const handler: Handlers<Article[] | undefined> = {
         title,
         imageUrl,
         createdAt,
+        implementationDate,
       };
     });
     return ctx.render(data);
   },
 };
 
-export default function ActivesPage({ data }: PageProps<Article[] | undefined>) {
+export default function ActivesPage({
+  data,
+}: PageProps<Article[] | undefined>) {
   return (
     <html class="dark">
       <DefaultHead />
