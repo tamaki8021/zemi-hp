@@ -37,8 +37,10 @@ export const ProfessorSection: FunctionComponent = () => {
               <p>マーケティング・データサイエンス</p>
             </div>
             <a
-              href="https://www.e-campus.gr.jp/staffinfo/public/staff/detail/3552/18"
+              href="https://www3.med.teikyo-u.ac.jp/profile/ja.36dd73d65bb6827a.html"
               type="button"
+              target="_blank"
+              rel="noopener noreferrer"
               class={tw`md:w-1/2 mt-6 py-2 px-4 flex justify-center items-center  bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full animate-pulse`}
             >
               more

@@ -13,7 +13,7 @@ type Props = {
 export const Actives: FunctionComponent<Props> = ({ articles }) => {
   return (
     <div class={tw`w-full mx-auto bg-black pt-10`}>
-      <TopSection title={"Active"} subTitle={"活動実績"} />
+      <TopSection title={"Activity"} subTitle={"活動実績"} />
       <div
         class={tw`w-full bg-black flex flex-col justify-center items-center bg-black relative`}
       >
@@ -24,15 +24,21 @@ export const Actives: FunctionComponent<Props> = ({ articles }) => {
             </p>
           ) : (
             <div class="flex flex-wrap">
-              {articles.map((article) => (
-                <ActiveCard
-                  key={article.id}
-                  id={article.id}
-                  title={article.title}
-                  createdAt={formatDate(article.createdAt)}
-                  imageUrl={article.imageUrl}
-                />
-              ))}
+              {articles
+                .sort(
+                  (a, b) =>
+                    new Date(b.implementationDate).getTime() -
+                    new Date(a.implementationDate).getTime()
+                )
+                .map((article) => (
+                  <ActiveCard
+                    key={article.id}
+                    id={article.id}
+                    title={article.title}
+                    createdAt={formatDate(article.implementationDate)}
+                    imageUrl={article.imageUrl}
+                  />
+                ))}
             </div>
           )}
         </div>

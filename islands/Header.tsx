@@ -48,7 +48,7 @@ export default function Header() {
           href="/active"
           class={tw`block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-6 dark:text-white`}
         >
-          Active
+          Activity
         </a>
         <a
           href="/news"
