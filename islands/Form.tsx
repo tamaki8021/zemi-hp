@@ -5,10 +5,10 @@ import { tw } from "@twind";
 
 const FormKeys = {
   formUrl:
-    "https://docs.google.com/forms/u/3/d/e/1FAIpQLSfOMUu6n3hnfs5xcKM4_rx-TlzxMjrib5rExPYCEkYk7ECwgg/formResponse",
-  name: "entry.527181026",
-  email: "entry.1133397221",
-  content: "entry.466288851",
+    "https://docs.google.com/forms/d/e/1FAIpQLSednRymkF0XBi8nh1ZIma9uQq0y89nHZDkvlcCu3XleHmcVxw/viewform",
+  name: "entry.1558690293",
+  email: "entry.1914789524",
+  content: "entry.948953426",
 };
 
 export default function Form() {
