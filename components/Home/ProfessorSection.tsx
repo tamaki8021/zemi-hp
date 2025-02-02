@@ -37,7 +37,7 @@ export const ProfessorSection: FunctionComponent = () => {
               <p>マーケティング・データサイエンス</p>
             </div>
             <a
-              href="https://www3.med.teikyo-u.ac.jp/profile/ja.36dd73d65bb6827a.html"
+              href="https://researchmap.jp/akagitokuaki"
               type="button"
               target="_blank"
               rel="noopener noreferrer"
